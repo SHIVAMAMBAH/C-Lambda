@@ -23,3 +23,21 @@
 #define lambda(a,_,c) \
     int lmd ## __LINE__(int a){return c;}
 ```
+##
+- This declares a function pointer `p` that points to a function taing an `int` as input and returning an `int`.
+```
+int (*p)(int);
+```
+##
+Expands into
+```
+lambda(x,->x+1);
+p = &lmdxx // where xx is the number where the lambda is defined.
+```
+The `lambda(x,->,x+1)` macro expands to `int lmdxx(int x) {return x+1;}`. This creates a function named lmdxx. `assign` then assigns p to the address of the function (`&lmdxx`).
+```
+int (*p)(int);
+    assign(p,
+        lambda(x, ->, x+1)
+    );
+```

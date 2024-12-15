@@ -9,7 +9,7 @@
 int main(){
   int (*p)(int);
 
-  assign(p, lambda(x, ->, x+1);
+  assign(p, lambda(x, ->, x+1));
 
   printf("%d", p(1));
   return 0;

@@ -1,4 +1,5 @@
-#include<stdio.h>
+/* main.c */
+#include <stdio.h>
 
 #define assign(a, b) b; \
   a = &lmd ## __LINE__;
